@@ -77,3 +77,13 @@ void loop() {
   delay(5000);
   scale.power_up();
 }
+
+int main()
+{
+  setup();
+  for (int i = 0 ; i < 100; i++)
+  {
+    loop();
+  }
+  return 0;
+}
