@@ -56,16 +56,16 @@ void pinMode(int gpio_pin, mode pin_mode)
 
     switch (pin_mode)
     {
-    case (INPUT):
+    case INPUT:
     {
         lg_ret_check(lgGpioClaimInput(gpio_handle, LG_SET_PULL_NONE, gpio_pin));
         break;
     }
-    case (OUTPUT):
+    case OUTPUT:
     {
         lg_ret_check(lgGpioClaimOutput(gpio_handle, LG_SET_PULL_NONE, gpio_pin, 0));
     }
-    case (INPUT_PULLUP):
+    case INPUT_PULLUP:
     {
         lg_ret_check(lgGpioClaimInput(gpio_handle, LG_SET_PULL_UP, gpio_pin));
     }
