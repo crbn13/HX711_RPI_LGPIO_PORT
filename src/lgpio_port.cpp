@@ -49,7 +49,8 @@ void digitalWrite(int gpio_pin, iostate state)
 
     int ret = lgGpioWrite(gpio_handle, gpio_pin, (int)state);
     if (lg_ret_check(ret))
-        std::cout <<" succesful write" << std::endl;
+        // std::cout <<" succesful write" << std::endl;
+        return;
     else
         std::cout <<" WRITE FAILED" << std::endl;
 
