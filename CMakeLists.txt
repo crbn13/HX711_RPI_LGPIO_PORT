@@ -2,6 +2,7 @@ cmake_minimum_required (VERSION 3.8)
 
 set(SOURCES
     src/HX711.cpp
+    src/lgpio_port.cpp
     )
 
 add_library(HX711)
