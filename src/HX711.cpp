@@ -7,7 +7,8 @@
  * (c) 2018 Bogdan Necula
  *
 **/
-#include <Arduino.h>
+// #include <Arduino.h>
+#include "lgpio_port.h"
 #include "HX711.h"
 
 // TEENSYDUINO has a port of Dean Camera's ATOMIC_BLOCK macros for AVR to ARM Cortex M3.

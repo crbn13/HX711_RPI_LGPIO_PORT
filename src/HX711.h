@@ -7,14 +7,14 @@
  * (c) 2018 Bogdan Necula
  *
 **/
-#ifndef HX711_h
-#define HX711_h
+#ifndef __HX711_H_
+#define __HX711_H_
 
-#if ARDUINO >= 100
-#include "Arduino.h"
-#else
-#include "WProgram.h"
-#endif
+// #if ARDUINO >= 100
+// #include "Arduino.h"
+// #else
+// #include "WProgram.h"
+// #endif
 
 class HX711
 {
