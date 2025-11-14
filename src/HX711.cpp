@@ -8,7 +8,6 @@
  *
 **/
 // #include <Arduino.h>
-#include "lgpio_port.h"
 #include "HX711.h"
 
 // TEENSYDUINO has a port of Dean Camera's ATOMIC_BLOCK macros for AVR to ARM Cortex M3.
@@ -28,6 +27,8 @@
     defined(ARDUINO_ARCH_SAM)     || defined(ARDUINO_ARCH_SAMD) || \
     defined(ARDUINO_ARCH_STM32)   || defined(TEENSYDUINO) \
     )
+
+#define FAST_CPU true // override existing fastcpu value
 
 #if HAS_ATOMIC_BLOCK
 // Acquire AVR-specific ATOMIC_BLOCK(ATOMIC_RESTORESTATE) macro.

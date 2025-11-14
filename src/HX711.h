@@ -10,6 +10,8 @@
 #ifndef __HX711_H_
 #define __HX711_H_
 
+#include "lgpio_port.h"
+
 // #if ARDUINO >= 100
 // #include "Arduino.h"
 // #else

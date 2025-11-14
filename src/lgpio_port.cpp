@@ -11,13 +11,12 @@ static bool gpio_check()
             return true;
         else 
             std::cout << "GPIO FAILIURE TO OPEN CHIP. ret = " << gpio_handle << std::endl; 
-
     }
     else
     {
         return true;
     }
-
+    return false;
 }
 
 static bool lg_ret_check(const int retval)
@@ -29,19 +28,21 @@ static bool lg_ret_check(const int retval)
         std::cout << "RET FAIL : RET = " << retval << std::endl;
         return false;
     }
-
 }
 
 iostate digitalRead(int gpio_pin)
 {
     if (!gpio_check())
         return LOW;
-
-
-
+    
+    int ret = lgGpioRead(gpio_handle, gpio_pin);
+    if (lg_ret_check(ret))
+        return (iostate)ret;
+    else
+        return LOW;
 }
 
-void digitalWrite(int gpio_pin, iostate = LOW)
+void digitalWrite(int gpio_pin, iostate)
 {
     if (!gpio_check())
         return;
@@ -70,15 +71,28 @@ void pinMode(int gpio_pin, mode pin_mode)
     }
     default:
     {
+        std::cout << "error incorrect mode specified?" << std::endl;
         break;
     }
 
     }
-    
-
-
 }
 
-unsigned long millis(){}
+unsigned long millis()
+{
+    auto ret = std::chrono::steady_clock::now().time_since_epoch().count();
+    std::cout << "ret = " << ret << std::endl;
+    return ret;
+}
+
 void noInterrupts(void){}
 void interrupts(void){}
+
+void delay(int ms)
+{
+    std::this_thread::sleep_for(std::chrono::milliseconds(ms));
+}
+void delayMicroseconds(int us)
+{
+    std::this_thread::sleep_for(std::chrono::microseconds(us));
+}
