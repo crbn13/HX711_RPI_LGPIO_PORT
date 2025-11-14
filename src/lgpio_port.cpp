@@ -42,11 +42,18 @@ iostate digitalRead(int gpio_pin)
         return LOW;
 }
 
-void digitalWrite(int gpio_pin, iostate)
+void digitalWrite(int gpio_pin, iostate state)
 {
     if (!gpio_check())
         return;
 
+    int ret = lgGpioWrite(gpio_handle, gpio_pin, (int)state);
+    if (lg_ret_check(ret))
+        std::cout <<" succesful write" << std::endl;
+    else
+        std::cout <<" WRITE FAILED" << std::endl;
+
+    return;
 }
 
 void pinMode(int gpio_pin, mode pin_mode)
