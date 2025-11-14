@@ -69,7 +69,7 @@ void setup() {
 
 void loop() {
   std::cout <<"one reading:\t";
-  std::cout <<scale.get_units(), 1;
+  std::cout <<scale.get_units();
   std::cout <<"\t| average:\t";
   std::cout <<scale.get_units(10)<< std::endl;
 
