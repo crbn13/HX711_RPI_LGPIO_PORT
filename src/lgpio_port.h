@@ -4,11 +4,11 @@
 #include <cstdint>
 #include <lgpio>
 
-enum iostate {
+static enum iostate {
     LOW = 0,
     HIGH = 1
 };
-enum mode{
+static enum mode{
     INPUT,
     OUTPUT,
     INPUT_PULLUP
