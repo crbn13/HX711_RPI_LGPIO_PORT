@@ -81,6 +81,7 @@ void HX711::begin(byte dout, byte pd_sck, byte gain) {
 	PD_SCK = pd_sck;
 	DOUT = dout;
 
+	std::cout << "begin fn()" << std::endl;
 	pinMode(PD_SCK, OUTPUT);
 	pinMode(DOUT, DOUT_MODE);
 

@@ -30,7 +30,7 @@ typedef uint8_t byte;
 // Arduino Functions 
 iostate digitalRead(int gpio_pin);
 void digitalWrite(int gpio_pin, iostate = LOW);
-void pinMode(int gpio_pin, mode);
+void pinMode(int gpio_pin, mode pin_mode);
 void delay(int ms);
 void delayMicroseconds(int us);
 unsigned long millis();

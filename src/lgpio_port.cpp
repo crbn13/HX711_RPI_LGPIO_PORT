@@ -64,10 +64,12 @@ void pinMode(int gpio_pin, mode pin_mode)
     case OUTPUT:
     {
         lg_ret_check(lgGpioClaimOutput(gpio_handle, LG_SET_PULL_NONE, gpio_pin, 0));
+        break;
     }
     case INPUT_PULLUP:
     {
         lg_ret_check(lgGpioClaimInput(gpio_handle, LG_SET_PULL_UP, gpio_pin));
+        break;
     }
     default:
     {
